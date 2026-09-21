@@ -19,7 +19,7 @@ This repository documents my problem-solving journey through different algorithm
 
 | Topic | Problems |
 |------|----------|
-| Arrays | 1 |
+| Arrays | 2 |
 | Strings | Coming Soon |
 | Linked List | Coming Soon |
 | Stack & Queue | Coming Soon |
@@ -30,6 +30,7 @@ This repository documents my problem-solving journey through different algorithm
 | Backtracking | 1 |
 | Trie | 1 |
 | Two Pointers | 1 |
+| Prefix/Suffix | 1 |
 | Greedy | Coming Soon |
 
 ---
@@ -41,6 +42,14 @@ This repository documents my problem-solving journey through different algorithm
 | # | Problem | Difficulty | Approach |
 |---|---------|------------|----------|
 | 11 | Container With Most Water | Medium | Two Pointers |
+
+---
+
+## Prefix / Suffix Products
+
+| # | Problem | Difficulty | Approach |
+|---|---------|------------|----------|
+| 238 | Product of Array Except Self | Medium | Prefix Product + Suffix Product |
 
 ---
 
@@ -57,6 +66,7 @@ This repository documents my problem-solving journey through different algorithm
 ## LeetCode 11 - Container With Most Water
 
 ### Concepts:
+
 - Two Pointers
 - Greedy Decision
 - Array Traversal
@@ -78,6 +88,7 @@ At every step, move the pointer with the **smaller height**, because the smaller
 ## LeetCode 212 - Word Search II
 
 ### Concepts:
+
 - Trie (Prefix Tree)
 - DFS Traversal
 - Backtracking
@@ -94,4 +105,28 @@ Instead of searching every word separately, a Trie allows multiple words to shar
 
 ---
 
-# 📂 Repository Structure
+## LeetCode 238 - Product of Array Except Self
+
+### Concepts:
+
+- Prefix Product
+- Suffix Product
+- Array Traversal
+- Space Optimization
+
+### Key Learning:
+
+Instead of using division or calculating the product repeatedly, calculate the product of all elements **to the left** of each index and then multiply it by the product of all elements **to the right**.
+
+The solution uses two passes:
+
+1. Left-to-right → store prefix products
+2. Right-to-left → multiply suffix products
+
+### Complexity:
+
+- Time: **O(n)**
+- Space: **O(1)** extra space, excluding the output array
+
+---
+

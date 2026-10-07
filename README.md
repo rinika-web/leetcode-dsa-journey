@@ -19,7 +19,7 @@ This repository documents my problem-solving journey through different algorithm
 
 | Topic                  | Problems    |
 | ---------------------- | ----------- |
-| Arrays                 | 2           |
+| Arrays                 | 3           |
 | Strings                | Coming Soon |
 | Linked List            | Coming Soon |
 | Stack & Queue          | Coming Soon |
@@ -29,7 +29,7 @@ This repository documents my problem-solving journey through different algorithm
 | Dynamic Programming    | 1           |
 | Backtracking           | 1           |
 | Trie                   | 1           |
-| Two Pointers           | 1           |
+| Two Pointers           | 2           |
 | Prefix/Suffix Products | 1           |
 | Greedy                 | Coming Soon |
 
@@ -39,9 +39,10 @@ This repository documents my problem-solving journey through different algorithm
 
 ## Two Pointers
 
-| #  | Problem                   | Difficulty | Approach     |
-| -- | ------------------------- | ---------- | ------------ |
-| 11 | Container With Most Water | Medium     | Two Pointers |
+| #  | Problem                   | Difficulty | Approach                           |
+| -- | ------------------------- | ---------- | ---------------------------------- |
+| 11 | Container With Most Water | Medium     | Two Pointers                       |
+| 42 | Trapping Rain Water       | Hard       | Two Pointers + Left/Right Maximums |
 
 ---
 
@@ -85,6 +86,46 @@ This repository documents my problem-solving journey through different algorithm
 Instead of checking every possible pair of lines with an **O(n²)** brute-force approach, two pointers allow us to start with the widest container and eliminate impossible pairs.
 
 At every step, move the pointer with the **smaller height**, because the smaller height is limiting the current container.
+
+### Complexity:
+
+* Time: **O(n)**
+* Space: **O(1)**
+
+---
+
+## LeetCode 42 - Trapping Rain Water
+
+### Concepts:
+
+* Two Pointers
+* Left Maximum
+* Right Maximum
+* Array Traversal
+* Space Optimization
+
+### Key Learning:
+
+The amount of water that can be trapped at a position depends on the maximum height of the bars on both sides.
+
+A straightforward approach can precompute the left and right maximum heights, but that requires **O(n)** extra space.
+
+The optimized two-pointer approach maintains:
+
+* `left_max` → maximum height seen from the left
+* `right_max` → maximum height seen from the right
+
+At each step, compare the heights at the two pointers.
+
+The side with the **smaller current height** can be processed because that side determines the limiting water level.
+
+If the current height is below the maximum boundary on that side, water can be trapped:
+
+```text
+water += max_height - current_height
+```
+
+This allows the problem to be solved in a single traversal without storing additional arrays.
 
 ### Complexity:
 
@@ -182,39 +223,18 @@ Then the DP states are shifted forward.
 
 ---
 
-# 📂 Repository Structure
-
-```text
-LeetCode-DSA-Journey/
-│
-├── Arrays/
-│   ├── 001-Two-Sum/
-│   ├── 011-Container-With-Most-Water/
-│   └── 238-Product-of-Array-Except-Self/
-│
-├── Dynamic-Programming/
-│   └── 198-House-Robber/
-│
-├── Backtracking/
-│   └── 212-Word-Search-II/
-│
-└── README.md
-```
-
----
-
 # 📈 Progress
 
 Currently solved problems:
 
-* **Arrays:** 2
+* **Arrays:** 3
 * **Dynamic Programming:** 1
 * **Backtracking:** 1
 * **Trie:** 1
-* **Two Pointers:** 1
+* **Two Pointers:** 2
 * **Prefix/Suffix Products:** 1
 
-**Total: 4 problems**
+**Total: 5 problems**
 
 ---
 

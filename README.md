@@ -8,30 +8,31 @@ This repository documents my problem-solving journey through different algorithm
 
 ## 🎯 Goals
 
-* Strengthen Data Structures & Algorithms fundamentals
-* Master common coding interview patterns
-* Improve problem-solving and optimization skills
-* Prepare for Software Engineering interviews
+- Strengthen Data Structures & Algorithms fundamentals
+- Master common coding interview patterns
+- Improve problem-solving and optimization skills
+- Prepare for Software Engineering interviews
 
 ---
 
 # 📚 Topics Covered
 
-| Topic                  | Problems    |
-| ---------------------- | ----------- |
-| Arrays                 | 3           |
-| Strings                | Coming Soon |
-| Linked List            | Coming Soon |
-| Stack & Queue          | Coming Soon |
-| Binary Search          | Coming Soon |
-| Trees                  | Coming Soon |
-| Graphs                 | Coming Soon |
-| Dynamic Programming    | 1           |
-| Backtracking           | 1           |
-| Trie                   | 1           |
-| Two Pointers           | 2           |
-| Prefix/Suffix Products | 1           |
-| Greedy                 | Coming Soon |
+| Topic | Problems |
+|------|----------|
+| Arrays | 3 |
+| Strings | 1 |
+| Linked List | Coming Soon |
+| Stack & Queue | Coming Soon |
+| Binary Search | Coming Soon |
+| Trees | Coming Soon |
+| Graphs | Coming Soon |
+| Dynamic Programming | 1 |
+| Backtracking | 1 |
+| Trie | 1 |
+| Two Pointers | 2 |
+| Sliding Window | 1 |
+| Prefix/Suffix Products | 1 |
+| Greedy | Coming Soon |
 
 ---
 
@@ -39,34 +40,42 @@ This repository documents my problem-solving journey through different algorithm
 
 ## Two Pointers
 
-| #  | Problem                   | Difficulty | Approach                           |
-| -- | ------------------------- | ---------- | ---------------------------------- |
-| 11 | Container With Most Water | Medium     | Two Pointers                       |
-| 42 | Trapping Rain Water       | Hard       | Two Pointers + Left/Right Maximums |
+| # | Problem | Difficulty | Approach |
+|---|---------|------------|----------|
+| 11 | Container With Most Water | Medium | Two Pointers |
+| 42 | Trapping Rain Water | Hard | Two Pointers + Left/Right Maximums |
+
+---
+
+## Sliding Window
+
+| # | Problem | Difficulty | Approach |
+|---|---------|------------|----------|
+| 424 | Longest Repeating Character Replacement | Medium | Sliding Window + Hash Map |
 
 ---
 
 ## Prefix / Suffix Products
 
-| #   | Problem                      | Difficulty | Approach                        |
-| --- | ---------------------------- | ---------- | ------------------------------- |
-| 238 | Product of Array Except Self | Medium     | Prefix Product + Suffix Product |
+| # | Problem | Difficulty | Approach |
+|---|---------|------------|----------|
+| 238 | Product of Array Except Self | Medium | Prefix Product + Suffix Product |
 
 ---
 
 ## Trie
 
-| #   | Problem        | Difficulty | Approach                  |
-| --- | -------------- | ---------- | ------------------------- |
-| 212 | Word Search II | Hard       | Trie + DFS + Backtracking |
+| # | Problem | Difficulty | Approach |
+|---|---------|------------|----------|
+| 212 | Word Search II | Hard | Trie + DFS + Backtracking |
 
 ---
 
 ## Dynamic Programming
 
-| #   | Problem      | Difficulty | Approach                                 |
-| --- | ------------ | ---------- | ---------------------------------------- |
-| 198 | House Robber | Medium     | Dynamic Programming + Space Optimization |
+| # | Problem | Difficulty | Approach |
+|---|---------|------------|----------|
+| 198 | House Robber | Medium | Dynamic Programming + Space Optimization |
 
 ---
 
@@ -76,10 +85,10 @@ This repository documents my problem-solving journey through different algorithm
 
 ### Concepts:
 
-* Two Pointers
-* Greedy Decision
-* Array Traversal
-* Space Optimization
+- Two Pointers
+- Greedy Decision
+- Array Traversal
+- Space Optimization
 
 ### Key Learning:
 
@@ -89,8 +98,8 @@ At every step, move the pointer with the **smaller height**, because the smaller
 
 ### Complexity:
 
-* Time: **O(n)**
-* Space: **O(1)**
+- Time: **O(n)**
+- Space: **O(1)**
 
 ---
 
@@ -98,11 +107,11 @@ At every step, move the pointer with the **smaller height**, because the smaller
 
 ### Concepts:
 
-* Two Pointers
-* Left Maximum
-* Right Maximum
-* Array Traversal
-* Space Optimization
+- Two Pointers
+- Left Maximum
+- Right Maximum
+- Array Traversal
+- Space Optimization
 
 ### Key Learning:
 
@@ -112,12 +121,10 @@ A straightforward approach can precompute the left and right maximum heights, bu
 
 The optimized two-pointer approach maintains:
 
-* `left_max` → maximum height seen from the left
-* `right_max` → maximum height seen from the right
+- `left_max` → maximum height seen from the left
+- `right_max` → maximum height seen from the right
 
-At each step, compare the heights at the two pointers.
-
-The side with the **smaller current height** can be processed because that side determines the limiting water level.
+At each step, process the side with the **smaller current height**, because that side determines the limiting water level.
 
 If the current height is below the maximum boundary on that side, water can be trapped:
 
@@ -129,8 +136,8 @@ This allows the problem to be solved in a single traversal without storing addit
 
 ### Complexity:
 
-* Time: **O(n)**
-* Space: **O(1)**
+- Time: **O(n)**
+- Space: **O(1)**
 
 ---
 
@@ -138,10 +145,10 @@ This allows the problem to be solved in a single traversal without storing addit
 
 ### Concepts:
 
-* Trie (Prefix Tree)
-* DFS Traversal
-* Backtracking
-* Prefix Pruning
+- Trie (Prefix Tree)
+- DFS Traversal
+- Backtracking
+- Prefix Pruning
 
 ### Key Learning:
 
@@ -149,8 +156,8 @@ Instead of searching every word separately, a Trie allows multiple words to shar
 
 ### Complexity:
 
-* Trie: **O(total characters in all words)**
-* DFS + Backtracking: Depends on board size and maximum word length
+- Trie: **O(total characters in all words)**
+- DFS + Backtracking: Depends on board size and maximum word length
 
 ---
 
@@ -158,10 +165,10 @@ Instead of searching every word separately, a Trie allows multiple words to shar
 
 ### Concepts:
 
-* Prefix Product
-* Suffix Product
-* Array Traversal
-* Space Optimization
+- Prefix Product
+- Suffix Product
+- Array Traversal
+- Space Optimization
 
 ### Key Learning:
 
@@ -174,8 +181,8 @@ The solution uses two passes:
 
 ### Complexity:
 
-* Time: **O(n)**
-* Space: **O(1)** extra space, excluding the output array
+- Time: **O(n)**
+- Space: **O(1)** extra space, excluding the output array
 
 ---
 
@@ -183,10 +190,10 @@ The solution uses two passes:
 
 ### Concepts:
 
-* Dynamic Programming
-* Bottom-Up DP
-* Recurrence Relation
-* Space Optimization
+- Dynamic Programming
+- Bottom-Up DP
+- Recurrence Relation
+- Space Optimization
 
 ### Key Learning:
 
@@ -205,8 +212,8 @@ Instead of storing the entire DP array, only the results for the **next two posi
 
 The solution processes the houses from **right to left** using two variables:
 
-* `next1` → maximum amount from the next house onward
-* `next2` → maximum amount from two houses ahead
+- `next1` → maximum amount from the next house onward
+- `next2` → maximum amount from two houses ahead
 
 For each house:
 
@@ -218,23 +225,92 @@ Then the DP states are shifted forward.
 
 ### Complexity:
 
-* Time: **O(n)**
-* Space: **O(1)**
+- Time: **O(n)**
+- Space: **O(1)**
+
+---
+
+## LeetCode 424 - Longest Repeating Character Replacement
+
+### Concepts:
+
+- Sliding Window
+- Hash Map
+- Character Frequency
+- Window Validation
+- Space Optimization
+
+### Key Learning:
+
+The goal is to find the longest substring that can be converted into a string containing the same character using at most `k` replacements.
+
+The key observation is:
+
+```text
+Window Length - Maximum Character Frequency <= k
+```
+
+The difference between the window length and the highest character frequency represents the minimum number of replacements needed to make all characters in the current window identical.
+
+The solution uses:
+
+- `count` → tracks the frequency of each character
+- `left` → left boundary of the sliding window
+- `right` → right boundary of the sliding window
+- `max_freq` → maximum character frequency observed
+- `max_length` → longest valid window found
+
+Whenever the number of required replacements exceeds `k`, shrink the window from the left.
+
+Once the window is valid, update the maximum length.
+
+The solution uses a constant-size character frequency map because the input contains only uppercase English letters.
+
+### Complexity:
+
+- Time: **O(n)**
+- Space: **O(1)**
+
+---
+
+# 📂 Repository Structure
+
+```text
+LeetCode-DSA-Journey/
+│
+├── Arrays/
+│   ├── 011-Container-With-Most-Water/
+│   ├── 042-Trapping-Rain-Water/
+│   └── 238-Product-of-Array-Except-Self/
+│
+├── Strings/
+│   └── 424-Longest-Repeating-Character-Replacement/
+│
+├── Dynamic-Programming/
+│   └── 198-House-Robber/
+│
+├── Backtracking/
+│   └── 212-Word-Search-II/
+│
+└── README.md
+```
 
 ---
 
 # 📈 Progress
 
-Currently solved problems:
+Currently documented problems:
 
-* **Arrays:** 3
-* **Dynamic Programming:** 1
-* **Backtracking:** 1
-* **Trie:** 1
-* **Two Pointers:** 2
-* **Prefix/Suffix Products:** 1
+- **Arrays:** 3
+- **Strings:** 1
+- **Dynamic Programming:** 1
+- **Backtracking:** 1
+- **Trie:** 1
+- **Two Pointers:** 2
+- **Sliding Window:** 1
+- **Prefix/Suffix Products:** 1
 
-**Total: 5 problems**
+**Total: 6 problems**
 
 ---
 
@@ -244,24 +320,23 @@ The goal is not just to solve individual problems, but to recognize reusable pat
 
 Current patterns include:
 
-* Two Pointers
-* Prefix / Suffix Products
-* Trie + DFS + Backtracking
-* Dynamic Programming
-* Space Optimization
+- Two Pointers
+- Sliding Window
+- Prefix / Suffix Products
+- Trie + DFS + Backtracking
+- Dynamic Programming
+- Space Optimization
 
 As the repository grows, more patterns will be added, including:
 
-* Hash Maps
-* Sliding Window
-* Binary Search
-* Stack / Monotonic Stack
-* Linked Lists
-* Trees
-* Graphs
-* Greedy
-* Dynamic Programming
-* Backtracking
+- Hash Maps
+- Binary Search
+- Stack / Monotonic Stack
+- Linked Lists
+- Trees
+- Graphs
+- Greedy
+- Backtracking
 
 ---
 

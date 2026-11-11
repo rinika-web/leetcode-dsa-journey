@@ -25,7 +25,7 @@ This repository documents my problem-solving journey through different algorithm
 | Stack & Queue | Coming Soon |
 | Binary Search | Coming Soon |
 | Trees | Coming Soon |
-| Graphs | Coming Soon |
+| Graphs | 1 |
 | Dynamic Programming | 1 |
 | Backtracking | 1 |
 | Trie | 1 |
@@ -76,6 +76,13 @@ This repository documents my problem-solving journey through different algorithm
 | # | Problem | Difficulty | Approach |
 |---|---------|------------|----------|
 | 198 | House Robber | Medium | Dynamic Programming + Space Optimization |
+
+---
+## Graph Theory / Topological Sort
+
+| # | Problem | Difficulty | Approach |
+|---|---------|------------|----------|
+| 2115 | Find All Possible Recipes from Given Supplies | Medium | Topological Sort + BFS |
 
 ---
 
@@ -273,6 +280,46 @@ The solution uses a constant-size character frequency map because the input cont
 
 ---
 
+---
+
+## LeetCode 2115 - Find All Possible Recipes from Given Supplies
+
+**### Concepts:**
+
+- Graph Theory
+- Topological Sorting
+- Breadth-First Search (BFS)
+- Dependency Resolution
+- Indegree
+
+**### Key Learning:**
+
+This problem can be modeled as a dependency graph where each recipe depends on a list of ingredients.
+
+The key idea is to process available ingredients and use them to unlock recipes whose dependencies have been satisfied.
+
+Using Topological Sort with BFS:
+
+1. Build a graph connecting each ingredient to the recipes that require it.
+2. Calculate the indegree of each recipe, representing the number of ingredients it still needs.
+3. Initialize the BFS queue with all available supplies.
+4. Process each available ingredient and reduce the indegree of the recipes that depend on it.
+5. When a recipe's indegree becomes zero, all its required ingredients are available, so the recipe can be added to the queue.
+
+A newly available recipe can also act as an ingredient for other recipes, allowing the process to continue.
+
+**### Complexity:**
+
+- Time: **O(R + I + E)**
+- Space: **O(R + I + E)**
+
+Where:
+- `R` = Number of recipes
+- `I` = Number of distinct ingredients and supplies
+- `E` = Total number of ingredient dependencies
+
+---
+
 # 📂 Repository Structure
 
 ```text
@@ -291,6 +338,8 @@ LeetCode-DSA-Journey/
 │
 ├── Backtracking/
 │   └── 212-Word-Search-II/
+├── Graphs/
+│   └── 2115-Find-All-Possible-Recipes-from-Given-Supplies/
 │
 └── README.md
 ```
@@ -305,12 +354,13 @@ Currently documented problems:
 - **Strings:** 1
 - **Dynamic Programming:** 1
 - **Backtracking:** 1
+- **Graphs:** 1
 - **Trie:** 1
 - **Two Pointers:** 2
 - **Sliding Window:** 1
 - **Prefix/Suffix Products:** 1
 
-**Total: 6 problems**
+**Total: 7 problems**
 
 ---
 
@@ -326,6 +376,8 @@ Current patterns include:
 - Trie + DFS + Backtracking
 - Dynamic Programming
 - Space Optimization
+- Graph Theory
+- Topological Sorting + BFS
 
 As the repository grows, more patterns will be added, including:
 
@@ -334,7 +386,6 @@ As the repository grows, more patterns will be added, including:
 - Stack / Monotonic Stack
 - Linked Lists
 - Trees
-- Graphs
 - Greedy
 - Backtracking
 

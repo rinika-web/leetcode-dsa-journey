@@ -25,7 +25,7 @@ This repository documents my problem-solving journey through different algorithm
 | Stack & Queue | Coming Soon |
 | Binary Search | Coming Soon |
 | Trees | Coming Soon |
-| Graphs | 1 |
+| Graphs | 2 |
 | Dynamic Programming | 1 |
 | Backtracking | 1 |
 | Trie | 1 |
@@ -83,6 +83,7 @@ This repository documents my problem-solving journey through different algorithm
 | # | Problem | Difficulty | Approach |
 |---|---------|------------|----------|
 | 2115 | Find All Possible Recipes from Given Supplies | Medium | Topological Sort + BFS |
+| 207 | Course Schedule | Medium | Topological Sort + BFS (Kahn's Algorithm) |
 
 ---
 
@@ -320,6 +321,41 @@ Where:
 
 ---
 
+## LeetCode 207 - Course Schedule
+
+**### Concepts:**
+
+- Graph Theory
+- Directed Graph
+- Topological Sorting
+- Breadth-First Search (BFS)
+- Kahn's Algorithm
+- Cycle Detection
+- Indegree
+
+**### Key Learning:**
+
+The problem asks whether all courses can be completed when some courses have prerequisite dependencies.
+
+The solution uses Topological Sorting with BFS (Kahn's Algorithm).
+
+The main idea is to process courses that have no prerequisites first.
+
+1. Build a directed graph where each prerequisite points to the course that depends on it.
+2. Calculate the indegree of every course, representing the number of prerequisites it has.
+3. Add all courses with an indegree of zero to the queue.
+4. Process each course and decrease the indegree of its dependent courses.
+5. Whenever a dependent course reaches an indegree of zero, add it to the queue.
+
+Maintain a `process` counter to track the number of courses completed.
+
+The final condition is:
+
+```python
+return process == numCourses
+
+---
+
 # 📂 Repository Structure
 
 ```text
@@ -339,6 +375,7 @@ LeetCode-DSA-Journey/
 ├── Backtracking/
 │   └── 212-Word-Search-II/
 ├── Graphs/
+│   └── 2115-Find-All-Possible-Recipes-from-Given-Supplies/
 │   └── 2115-Find-All-Possible-Recipes-from-Given-Supplies/
 │
 └── README.md
